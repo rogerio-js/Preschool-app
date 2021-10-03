@@ -6,11 +6,11 @@ interface Props {
 
 const Layout = ({children}: Props) => {
     return (
-        <div>
+        <>
             Upper Layout 
             {children}
             Lower Layout 
-        </div>
+        </>
     )
 }
 
