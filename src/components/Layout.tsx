@@ -1,16 +1,16 @@
-import { ReactNode } from 'react';
-import  Navbar from "../components/Navbar";
+import { ReactNode } from "react";
+import Navbar from "../components/Navbar";
 interface Props {
-   children: ReactNode; 
+  children: ReactNode;
 }
 
-const Layout = ({children}: Props) => {
-    return (
-        <>
-            <Navbar />
-            {children}
-        </>
-    )
-}
+const Layout = ({ children }: Props) => {
+  return (
+    <>
+      <Navbar />
+      {children}
+    </>
+  );
+};
 
-export default Layout
+export default Layout;

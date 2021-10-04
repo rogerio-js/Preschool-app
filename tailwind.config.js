@@ -3,6 +3,7 @@ module.exports = {
   purge: ["./src/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
+    
     extend: {
       maxWidth: {
         "8xl": "90rem",

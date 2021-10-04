@@ -11,6 +11,8 @@ import {
     SortAscendingIcon,
     StarIcon,
   } from "@heroicons/react/solid";
+  import DarkModeSwitcher from "./DarkModeSwitcher";
+
 
   import { MenuAlt1Icon, XIcon } from "@heroicons/react/outline";
 
@@ -35,11 +37,13 @@ interface Props {
 
 const Navbar = (props: Props) => {
     return (
-        <Disclosure as="nav" className="flex-shrink-0 bg-indigo-600 z-50 relative">
+       <>
+        <Disclosure as="nav" className="flex-shrink-0 bg-green-600 z-50 relative">
               {({ open }) => (
                 <>
                   <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
                     <div className="relative flex items-center justify-between h-16">
+            
                       {/* Logo section */}
                       <div className="flex items-center px-2 lg:px-0 xl:w-64">
                         <div className="flex-shrink-0">
@@ -151,6 +155,7 @@ const Navbar = (props: Props) => {
                           </Menu>
                         </div>
                       </div>
+                      <DarkModeSwitcher />
                     </div>
                   </div>
 
@@ -188,7 +193,9 @@ const Navbar = (props: Props) => {
                   </Disclosure.Panel>
                 </>
               )}
+              
             </Disclosure>
+       </>
     )
 }
 
