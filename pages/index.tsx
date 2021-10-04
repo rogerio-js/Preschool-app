@@ -4,15 +4,25 @@ import Image from "next/image";
 import Layout from "../src/components/Layout";
 import styles from "../styles/Home.module.css";
 import { useTheme } from "next-themes";
+import SchoolList from "../src/components/SchoolList";
+import Map from "../src/components/Map";
+import AppShell from "../src/components/AppShell";
+
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
   return (
-    <div>
+    <>
       <Layout>
-        <h1>Homepage</h1>
+        <AppShell>
+          <SchoolList />
+          <Map />
+        </AppShell>
       </Layout>
-    </div>
+    </>
   );
 };
 
