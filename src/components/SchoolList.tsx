@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Menu } from "@headlessui/react";
 import {
   ChevronDownIcon,
@@ -7,15 +7,7 @@ import {
   StarIcon,
   LocationMarkerIcon,
 } from "@heroicons/react/solid";
-import ReactMapGL, {
-  Popup,
-  ViewState,
-  InteractiveMapProps,
-  NavigationControl,
-  FullscreenControl,
-  GeolocateControl,
-  FlyToInterpolator,
-} from "react-map-gl";
+import { ViewState, FlyToInterpolator } from "react-map-gl";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -23,15 +15,19 @@ function classNames(...classes: any) {
 
 interface ISchoolProps {
   schools: {
-    Name: string;
+    id: string;
+    name: string;
     address: string;
     latitude: number;
     longitude: number;
     isFavourite: boolean | undefined;
-    nearby: never[];
+    nearby?: [];
+    Reviews?: [];
+    Brief?: [];
+    Approval?: [];
   }[];
-  setViewport: any;
-  viewport: any;
+  setViewport: Dispatch<SetStateAction<ISchoolProps["viewport"]>>;
+  viewport: ViewState;
 }
 
 const SchoolList = ({ schools, viewport, setViewport }: ISchoolProps) => {
@@ -144,7 +140,7 @@ const SchoolList = ({ schools, viewport, setViewport }: ISchoolProps) => {
                               className="absolute inset-0"
                               aria-hidden="true"
                             />
-                            {school.Name}{" "}
+                            {school.name}{" "}
                           </a>
                         </h2>
                       </span>

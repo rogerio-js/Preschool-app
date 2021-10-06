@@ -1,0 +1,31 @@
+type School @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String
+  address: String
+  longitude: Float
+  latitude: Float
+  isFavourite: Boolean
+  Reviews: Reviews @connection
+  Brief: Brief @connection
+  Approval: Approval @connection
+}
+
+type Brief @model @auth(rules: [{allow: public}, {allow: owner, operations: [read, create, update]}]) {
+  id: ID!
+  content: String
+  School: School @connection
+}
+
+type Approval @model @auth(rules: [{allow: public}, {allow: owner, operations: [read, create, update]}]) {
+  id: ID!
+  approvalNumber: Int
+  disapprovalNumber: Int
+  School: School @connection
+}
+
+type Reviews @model @auth(rules: [{allow: public}, {allow: owner, operations: [read, create, update]}]) {
+  id: ID!
+  content: String
+  School: School @connection
+}
+ 

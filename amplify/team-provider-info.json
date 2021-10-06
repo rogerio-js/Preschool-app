@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-montessori-dev-175040-authRole",
+      "UnauthRoleArn": "arn:aws:iam::825169358683:role/amplify-montessori-dev-175040-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::825169358683:role/amplify-montessori-dev-175040-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-montessori-dev-175040-deployment",
+      "UnauthRoleName": "amplify-montessori-dev-175040-unauthRole",
+      "StackName": "amplify-montessori-dev-175040",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:825169358683:stack/amplify-montessori-dev-175040/f782e7b0-2660-11ec-9bef-029e93228098",
+      "AmplifyAppId": "dl2rkgegnc1yx"
+    },
+    "categories": {
+      "auth": {
+        "montessori192f56dd": {}
+      }
+    }
+  }
+}

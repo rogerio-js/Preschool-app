@@ -2,20 +2,13 @@ import React, { ReactNode } from "react";
 import { Marker } from "react-map-gl";
 import { useTheme } from "next-themes";
 interface ISchool {
-  Name: string;
+  name: string;
   latitude: number;
   longitude: number;
   onClick: () => void;
- 
- 
 }
 
-const MapMarker = ({
-  Name,
-  latitude,
-  longitude,
-  onClick,
-}: ISchool) => {
+const MapMarker = ({ name, latitude, longitude, onClick }: ISchool) => {
   const { theme } = useTheme();
   const isDarkTmeme = theme === "dark";
   return (
@@ -35,7 +28,6 @@ const MapMarker = ({
           strokeMiterlimit={10}
         />
       </svg>
-      
     </Marker>
   );
 };

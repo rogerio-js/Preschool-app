@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "montessori",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authmontessori192f56dd",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

@@ -2,7 +2,6 @@ import React, { useCallback, useMemo, useRef, useState, Dispatch, SetStateAction
 import ReactMapGL,  {
   Popup,
   ViewState,
-  InteractiveMapProps,
   NavigationControl,
   FullscreenControl,
   GeolocateControl,
@@ -14,7 +13,6 @@ import {
   NavigationControlStyle,
 } from "../../../utils/map/config";
 import { useTheme } from "next-themes";
-import SCHOOLS from "../../../data/data.json";
 import MapMarker from "../MapMarker";
 import { Map as MbMap, AttributionControl } from "mapbox-gl";
 import PopupInfo from "./PopupInfo";
@@ -22,10 +20,10 @@ import PopupInfo from "./PopupInfo";
 
 interface ISchoolProps {
   schools: {
-    Name: string;
+    name: string;
     latitude: number;
     longitude: number;
-    nearby: never[];
+    nearby?: [];
   }[];
   viewport: ViewState;
   setViewport: Dispatch<SetStateAction<ISchoolProps["viewport"]>>;
@@ -82,7 +80,7 @@ const Map = ({ schools, viewport, setViewport}: ISchoolProps) => {
             <>
               <MapMarker
                 key={i}
-                Name={school.Name}
+                name={school.name}
                 latitude={school.latitude}
                 longitude={school.longitude}
                 onClick={() => onSelectSchool(school)}
