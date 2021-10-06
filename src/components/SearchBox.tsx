@@ -60,7 +60,6 @@ export const SearchInput = ({
     if (e.target.value === "") {
       onSelectAddress("", null, null);
     }
-    console.log(e.target.value);
   };
 
   const handleSelect = async (address: string) => {
@@ -70,7 +69,9 @@ export const SearchInput = ({
     try {
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
-      console.log("result", results[0])
+      console.log("address", address);
+      console.log("lat", lat);
+      console.log("lng", lng);
       onSelectAddress(address, lat, lng);
     } catch (error) {
       console.error(`😱 Error:`, error);

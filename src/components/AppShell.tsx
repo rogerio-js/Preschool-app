@@ -6,8 +6,8 @@ interface Props {
 
 const AppShell = ({ children }: Props) => {
   return (
-    <div className="mx-auto max-w-8xl">
-      <div className="relative min-h-screen flex flex-col">
+    <div style={{maxHeight: "80vh"}}  className="mx-auto max-w-8xl">
+      <div className="relative flex flex-col">
         <div className="flex-grow w-full lg:flex">{children}</div>
       </div>
     </div>

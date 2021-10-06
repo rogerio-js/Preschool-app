@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Millie's House Early Learning Centre",
+    "address": "3 Balfour Terrace, Christchurch Central City, Christchurch 8011",
+    "isFavourite": true,
+    "latitude": -43.5285417578691,
+    "longitude": 172.634833557687,
+    "nearby": []
+  },
+  {
+    "Name": "Kindercare Learning Centres Christchurch CBD",
+    "address": "3 Balfour Terrace, Christchurch Central City, Christchurch 8011",
+    "isFavourite": false,
+    "latitude": -43.5282955188638,
+    "longitude": 172.644849796322,
+    "nearby": []
+  },
+  {
+    "Name": "Grow Active Balfour Terrace, Christchurch Central",
+    "address": "3 Balfour Terrace, Christchurch Central City, Christchurch 8011",
+    "isFavourite": false,
+    "latitude": -43.5380474930068,
+    "longitude": 172.626110600652,
+    "nearby": []
+  }
+]

@@ -5,12 +5,9 @@ import Layout from "../src/components/Layout";
 import styles from "../styles/Home.module.css";
 import { useTheme } from "next-themes";
 import SchoolList from "../src/components/SchoolList";
-import Map from "../src/components/Map";
+import Map from "../src/components/MainMap/Map";
 import AppShell from "../src/components/AppShell";
-
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
+import SCHOOLS from "../data/data.json";
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
@@ -18,8 +15,8 @@ const Home: NextPage = () => {
     <>
       <Layout>
         <AppShell>
-          <SchoolList />
-          <Map />
+          <SchoolList schools={SCHOOLS} />
+          <Map schools={SCHOOLS} />
         </AppShell>
       </Layout>
     </>
