@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
-import ReactMapGL, {
+import React, { useCallback, useMemo, useRef, useState, Dispatch, SetStateAction } from "react";
+import ReactMapGL,  {
   Popup,
   ViewState,
   InteractiveMapProps,
@@ -27,18 +27,15 @@ interface ISchoolProps {
     longitude: number;
     nearby: never[];
   }[];
+  viewport: ViewState;
+  setViewport: Dispatch<SetStateAction<ISchoolProps["viewport"]>>;
+  
 }
 
-const Map = ({ schools }: ISchoolProps) => {
+const Map = ({ schools, viewport, setViewport}: ISchoolProps) => {
   const { theme } = useTheme();
   const mapRef = useRef<ReactMapGL | null>(null);
-  const [viewport, setViewport] = useState<ViewState>({
-    latitude: -43.5380474930068,
-    longitude: 172.626110600652,
-    zoom: 15,
-    bearing: 0,
-    pitch: 0,
-  });
+
 
   const [showInfo, setShowInfo] = useState<any>(null);
 
@@ -53,7 +50,7 @@ const Map = ({ schools }: ISchoolProps) => {
       transitionInterpolator: new FlyToInterpolator({ speed: 1.2 }),
       transitionDuration: "auto",
     });
-  }, []);
+  }, [setViewport]);
 
   return (
     <div className=" overflow-hidden bg-gray-200  lg:flex-shrink-0 lg:border-l lg:border-gray-200 w-full lg:w-8/12">
@@ -77,14 +74,14 @@ const Map = ({ schools }: ISchoolProps) => {
           onLoad={() => {
             if (mapRef.current) {
               const bounds = mapRef.current.getMap().getBounds();
-              // setDataBounds(JSON.stringify(bounds.toArray()));
+              console.log("bounds", bounds)
             }
           }}
         >
           {schools.map((school, i) => (
             <>
               <MapMarker
-                key={school.Name + i}
+                key={i}
                 Name={school.Name}
                 latitude={school.latitude}
                 longitude={school.longitude}
